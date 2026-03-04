@@ -1,4 +1,4 @@
-package 백준.구현;
+package 백준.구현.Bronze;
 
 import java.io.*;
 import java.util.StringTokenizer;
