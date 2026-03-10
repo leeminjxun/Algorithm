@@ -65,9 +65,9 @@ public class BOJ_3085_사탕게임 {
                 } else {
                     count = 1;
                 }
-            }
 
-            maxCount = Math.max(count, maxCount);
+                maxCount = Math.max(count, maxCount);
+            }
         }
 
         // 세로 (열) 검사
@@ -79,9 +79,9 @@ public class BOJ_3085_사탕게임 {
                 } else {
                     count = 1;
                 }
-            }
 
-            maxCount = Math.max(count, maxCount);
+                maxCount = Math.max(count, maxCount);
+            }
         }
     }
 }
