@@ -18,7 +18,6 @@ public class BOJ_14467_소가길을건너간이유1 {
             arr[i] = 2;
         }
 
-
         for(int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
             int num = Integer.parseInt(st.nextToken()) - 1;
@@ -37,7 +36,6 @@ public class BOJ_14467_소가길을건너간이유1 {
         }
 
         System.out.println(cnt);
-
 
     }
 }
