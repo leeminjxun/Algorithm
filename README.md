@@ -31,7 +31,7 @@
 ❌ boj: 20920 영단어 암기는 괴로워 (HashMap, Silver3)
 🔁 boj: 1463 1로 만들기 (DP, Silver3)
 ```
-
+✅ boj: 13216 그룹 단어 체커 (BFS, Silver5)
 ---
 
 # 풀이 상태 이모지 규칙
