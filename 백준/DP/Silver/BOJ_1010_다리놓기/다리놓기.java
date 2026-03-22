@@ -1,9 +1,9 @@
-package 백준.DP.Silver;
+package 백준.DP.Silver.BOJ_1010_다리놓기;
 
 import java.io.*;
 import java.util.*;
 
-public class BOJ_1010_다리놓기 {
+public class 다리놓기 {
     static int[][] dp = new int[31][31];
 
     public static void main(String[] args) throws Exception {
