@@ -1,9 +1,9 @@
-package 백준.Sort.Silver;
+package 백준.Sort.Silver.BOJ_10814_나이순정렬;
 
 import java.io.*;
 import java.util.*;
 
-public class BOJ_10814_나이순정렬 {
+public class 나이순정렬 {
     // 풀이 1. Member 클래스 생성을 통해 List 로 정렬
     // 실행속도 매우 느림
 //    static class Member {
