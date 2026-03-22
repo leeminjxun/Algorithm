@@ -1,8 +1,8 @@
-package 백준.implementation.Silver;
+package 백준.implementation.Silver.BOJ_3085_사탕게임;
 
 import java.io.*;
 
-public class BOJ_3085_사탕게임 {
+public class 사탕게임 {
     static int N;
     static int maxCount;
     static char[][] candy;
