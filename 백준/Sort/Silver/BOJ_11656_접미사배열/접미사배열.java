@@ -1,9 +1,9 @@
-package 백준.Sort.Silver;
+package 백준.Sort.Silver.BOJ_11656_접미사배열;
 
 import java.io.*;
 import java.util.*;
 
-public class BOJ_11656_접미사배열 {
+public class 접미사배열 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
