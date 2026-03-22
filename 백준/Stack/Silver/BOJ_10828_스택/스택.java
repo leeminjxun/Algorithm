@@ -1,9 +1,9 @@
-package 백준.Stack.Silver;
+package 백준.Stack.Silver.BOJ_10828_스택;
 
 import java.io.*;
 import java.util.*;
 
-public class BOJ_10828_스택 {
+public class 스택 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
