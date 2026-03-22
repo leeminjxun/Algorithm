@@ -1,9 +1,9 @@
-package 백준.bruteforce.Silver;
+package 백준.bruteforce.Silver.BOJ_1476_날짜계산;
 
 import java.io.*;
 import java.util.*;
 
-public class BOJ_1476_날짜계산 {
+public class 날짜계산 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
