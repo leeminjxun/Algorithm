@@ -1,9 +1,9 @@
-package 백준.bruteforce.Bronze;
+package 백준.bruteforce.Bronze.BOJ_2309_일곱난쟁이;
 
 import java.io.*;
 import java.util.*;
 
-public class BOJ_2309_일곱난쟁이 {
+public class 일곱난쟁이 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
