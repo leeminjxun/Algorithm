@@ -1,9 +1,9 @@
-package 백준.bruteforce.Silver;
+package 백준.bruteforce.Silver.BOJ_6064_카잉달력;
 
 import java.io.*;
 import java.util.*;
 
-public class BOJ_6064_카잉달력 {
+public class 카잉달력 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
