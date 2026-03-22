@@ -1,9 +1,9 @@
-package 백준.Sort.Silver;
+package 백준.Sort.Silver.BOJ_1181_단어정렬;
 
 import java.io.*;
 import java.util.*;
 
-public class BOJ_1181_단어정렬 {
+public class 단어정렬 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
