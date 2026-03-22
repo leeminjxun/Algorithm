@@ -1,9 +1,9 @@
-package 백준.Queue.Silver;
+package 백준.Queue.Silver.BOJ_10845_큐;
 
 import java.io.*;
 import java.util.*;
 
-public class BOJ_10845_큐 {
+public class 큐 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
