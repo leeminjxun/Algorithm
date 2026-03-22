@@ -1,9 +1,9 @@
-package 백준.Hash.Map.Silver;
+package 백준.Hash.Map.Silver.BOJ_10816_숫자카드2;
 
 import java.io.*;
 import java.util.*;
 
-public class BOJ_10816_숫자카드2 {
+public class 숫자카드2 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
