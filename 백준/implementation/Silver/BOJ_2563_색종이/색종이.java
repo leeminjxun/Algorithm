@@ -1,9 +1,9 @@
-package 백준.implementation.Silver;
+package 백준.implementation.Silver.BOJ_2563_색종이;
 
 import java.io.*;
 import java.util.*;
 
-public class BOJ_2563_색종이 {
+public class 색종이 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
