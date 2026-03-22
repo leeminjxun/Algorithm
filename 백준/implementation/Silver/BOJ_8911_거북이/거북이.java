@@ -1,8 +1,8 @@
-package 백준.implementation.Silver;
+package 백준.implementation.Silver.BOJ_8911_거북이;
 
 import java.io.*;
 
-public class BOJ_8911_거북이 {
+public class 거북이 {
     // 방향 : 북 -> 동 -> 남 -> 서
     static int[] dx = {0, 1, 0, -1};
     static int[] dy = {1, 0, -1, 0};
