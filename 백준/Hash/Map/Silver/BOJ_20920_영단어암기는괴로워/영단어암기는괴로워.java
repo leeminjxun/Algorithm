@@ -1,9 +1,9 @@
-package 백준.Hash.Map.Silver;
+package 백준.Hash.Map.Silver.BOJ_20920_영단어암기는괴로워;
 
 import java.io.*;
 import java.util.*;
 
-public class BOJ_20920_영단어암기는괴로워 {
+public class 영단어암기는괴로워 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
