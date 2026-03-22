@@ -1,3 +1,3 @@
-# ✅ BOJ: 14467 소가 길을 건너간 이유1 (구현, Silver5)
+# ❌ BOJ: 17413 단어뒤집기2 (구현 / stack, Silver3)
 
-# https://www.acmicpc.net/problem/14467
+# https://www.acmicpc.net/problem/17413

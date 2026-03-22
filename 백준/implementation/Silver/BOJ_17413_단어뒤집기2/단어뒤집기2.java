@@ -1,9 +1,9 @@
-package 백준.implementation.Silver;
+package 백준.implementation.Silver.BOJ_17413_단어뒤집기2;
 
 import java.io.*;
 import java.util.*;
 
-public class BOJ_17413_단어뒤집기2 {
+public class 단어뒤집기2 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
