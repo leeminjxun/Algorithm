@@ -1,8 +1,8 @@
-package 백준.implementation.Bronze;
+package 백준.implementation.Bronze.BOJ_1157_단어공부;
 
 import java.io.*;
 
-public class BOJ_1157_단어공부 {
+public class 단어공부 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
