@@ -1,8 +1,8 @@
-package 백준.implementation.Bronze;
+package 백준.implementation.Bronze.BOJ_10808_알파벳개수;
 
 import java.io.*;
 
-public class BOJ_10808_알파벳개수 {
+public class 알파벳개수 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
