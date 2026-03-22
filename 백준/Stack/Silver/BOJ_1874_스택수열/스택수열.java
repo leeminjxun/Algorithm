@@ -1,9 +1,9 @@
-package 백준.Stack.Silver;
+package 백준.Stack.Silver.BOJ_1874_스택수열;
 
 import java.io.*;
 import java.util.*;
 
-public class BOJ_1874_스택수열 {
+public class 스택수열 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
