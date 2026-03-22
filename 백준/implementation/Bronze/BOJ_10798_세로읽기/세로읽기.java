@@ -1,8 +1,8 @@
-package 백준.implementation.Bronze;
+package 백준.implementation.Bronze.BOJ_10798_세로읽기;
 
 import java.io.*;
 
-public class BOJ_10798_세로읽기 {
+public class 세로읽기 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
