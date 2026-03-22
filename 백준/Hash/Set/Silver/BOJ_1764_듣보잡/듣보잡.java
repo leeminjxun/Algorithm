@@ -1,9 +1,9 @@
-package 백준.Hash.Set.Silver;
+package 백준.Hash.Set.Silver.BOJ_1764_듣보잡;
 
 import java.io.*;
 import java.util.*;
 
-public class BOJ_1764_듣보잡 {
+public class 듣보잡 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
