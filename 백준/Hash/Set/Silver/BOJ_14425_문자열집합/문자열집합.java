@@ -1,9 +1,9 @@
-package 백준.Hash.Set.Silver;
+package 백준.Hash.Set.Silver.BOJ_14425_문자열집합;
 
 import java.io.*;
 import java.util.*;
 
-public class BOJ_14425_문자열집합 {
+public class 문자열집합 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
