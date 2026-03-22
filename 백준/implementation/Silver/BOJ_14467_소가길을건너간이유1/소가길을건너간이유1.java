@@ -1,9 +1,9 @@
-package 백준.implementation.Silver;
+package 백준.implementation.Silver.BOJ_14467_소가길을건너간이유1;
 
 import java.io.*;
 import java.util.*;
 
-public class BOJ_14467_소가길을건너간이유1 {
+public class 소가길을건너간이유1 {
     public static void main(String[] args) throws Exception {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
