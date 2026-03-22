@@ -1,9 +1,9 @@
-package 백준.implementation.Silver;
+package 백준.implementation.Silver.BOJ_1316_그룹단어체커;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class BOJ_1316_그룹단어체커 {
+public class 그룹단어체커 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
