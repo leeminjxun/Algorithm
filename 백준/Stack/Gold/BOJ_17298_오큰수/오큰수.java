@@ -1,9 +1,9 @@
-package 백준.Stack.Gold;
+package 백준.Stack.Gold.BOJ_17298_오큰수;
 
 import java.io.*;
 import java.util.*;
 
-public class BOJ_17298_오큰수 {
+public class 오큰수 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
