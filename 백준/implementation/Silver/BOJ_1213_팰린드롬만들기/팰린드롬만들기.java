@@ -1,8 +1,8 @@
-package 백준.implementation.Silver;
+package 백준.implementation.Silver.BOJ_1213_팰린드롬만들기;
 
 import java.io.*;
 
-public class BOJ_1213_팰린드롬만들기 {
+public class 팰린드롬만들기 {
     public static void main(String[] args) throws Exception {
         // 팰린드롬 : 앞으로 읽어도, 뒤로 읽어도 같은 문자, 예) 소주 만병만 주소
         // 현재 문제에서는 이를 영단어로서 표현하려한다. AABB -> ABBA (사전순으로 앞인 단어를 출력)
