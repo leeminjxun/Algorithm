@@ -1,9 +1,9 @@
-package 백준.Sort.Silver;
+package 백준.Sort.Silver.BOJ_1431_시리얼번호;
 
 import java.io.*;
 import java.util.*;
 
-public class BOJ_1431_시리얼번호 {
+public class 시리얼번호 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
