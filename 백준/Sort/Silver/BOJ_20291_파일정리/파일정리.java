@@ -1,10 +1,10 @@
-package 백준.Sort.Silver;
+package 백준.Sort.Silver.BOJ_20291_파일정리;
 
 import java.io.*;
 import java.util.*;
 
 
-public class BOJ_20291_파일정리 {
+public class 파일정리 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
