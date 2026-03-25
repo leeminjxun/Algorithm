@@ -1,4 +1,4 @@
-# ✅ BOJ: 5430 AC (Deque , Gold5)
+# ❌ BOJ: 5430 AC (Deque , Gold5)
 
 # https://www.acmicpc.net/problem/5430
 
