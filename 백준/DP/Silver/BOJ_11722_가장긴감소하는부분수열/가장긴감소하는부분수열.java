@@ -19,6 +19,7 @@ public class 가장긴감소하는부분수열 {
         for(int i = 1; i <= N; i++) {
             int value = Integer.parseInt(st.nextToken());
             seq[i] = value;
+            dp[i] = 1;
             for(int j = i - 1; j >= 0; j--) {
 
                 if(seq[j] > seq[i]) {
@@ -29,8 +30,7 @@ public class 가장긴감소하는부분수열 {
             max = Math.max(dp[i], max);
         }
 
-        if(max == 0) System.out.println(0);
-        else System.out.println(max + 1);
+        System.out.println(max);
 
 
 
