@@ -1,6 +1,6 @@
-# ✅ BOJ: 1912 연속합 (DP , Silver1)
+# ✅ BOJ: 1149 RGB 거리 (DP , Silver1)
 
-https://www.acmicpc.net/problem/1912
+https://www.acmicpc.net/problem/1149
 
 # 풀이 과정
 

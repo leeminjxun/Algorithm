@@ -5,6 +5,7 @@ import java.util.*;
 
 public class RGB거리 {
     public static void main(String[] args) throws Exception {
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
 
