@@ -15,44 +15,41 @@ public class 팰린드롬만들기 {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
+        int[] alpha = new int[26];
+
         String name = br.readLine();
 
-        int[] count = new int[26];
-
-        for(int i = 0; i < name.length(); i++) {
-            char c = name.charAt(i);
-
-            count[c - 'A']++;
+        for(char ch : name.toCharArray()) {
+            int a = ch - 'A';
+            alpha[a]++;
         }
 
+        int check = 0;
         int odd = 0;
-        char mid = 0;
 
-        for(int i = 0; i < 26; i++) {
-            if(count[i] % 2 == 1) {
-                odd++;
-                mid = (char)(i + 'A');
+        for(int a = 0; a < 26; a++) {
+            if(alpha[a] % 2 != 0) {
+                odd = a;
+                check++;
             }
         }
 
-        if(odd > 1) {
+        if(check > 1) {
             System.out.println("I'm Sorry Hansoo");
-            return;
+            return ;
         }
 
         StringBuilder left = new StringBuilder();
-
-        for(int i = 0; i < 26; i++) {
-            for(int j = 0; j < count[i]/2; j++) {
-                left.append((char)(i + 'A'));
+        for(int a = 0; a < 26; a++) {
+            for(int i = 0; i < alpha[a] / 2; i++) {
+                left.append((char)(a + 'A'));
             }
         }
 
-        // left 값과 대칭으로 생성된 right
         StringBuilder right = new StringBuilder(left).reverse();
 
-        if(odd == 1) {
-            left.append(mid);
+        if(check == 1) {
+            left.append((char)(odd + 'A'));
         }
 
         left.append(right);
@@ -60,3 +57,4 @@ public class 팰린드롬만들기 {
         System.out.println(left);
     }
 }
+
