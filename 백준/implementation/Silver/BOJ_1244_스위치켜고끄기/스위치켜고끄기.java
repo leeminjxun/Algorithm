@@ -2,7 +2,7 @@ package 백준.implementation.Silver.BOJ_1244_스위치켜고끄기;
 
 import java.io.*;
 import java.util.*;
-
+// 🔁
 public class 스위치켜고끄기 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
