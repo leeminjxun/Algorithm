@@ -1,4 +1,4 @@
-package 백준.implementation.Silver.BOJ_14467_소가길을건너간이유1;
+package 백준.implementation.Bronze.BOJ_14467_소가길을건너간이유1;
 
 import java.io.*;
 import java.util.*;
@@ -14,9 +14,7 @@ public class 소가길을건너간이유1 {
         int[] arr = new int[10];
         int cnt = 0;
 
-        for(int i = 0; i < 10; i++) {
-            arr[i] = 2;
-        }
+        Arrays.fill(arr, -1);
 
         for(int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
