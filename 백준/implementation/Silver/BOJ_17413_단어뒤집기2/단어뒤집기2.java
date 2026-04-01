@@ -6,52 +6,49 @@ import java.util.*;
 public class 단어뒤집기2 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder sb = new StringBuilder();
-
         Stack<Character> stack = new Stack<>();
 
-        String str = br.readLine();
+        String s = br.readLine();
 
-        boolean check = false;
-        // < 를 만났을 경우, stack 의 내용을 전부 pop 하여 출력한다.
-        // > 을 만났을 경우, > 값은 우선 출력한다. check = false
+        boolean reverse = true;
 
-        // check = true 인 경우 -> i 인덱스에 해당하는 값을 출력한다.
-        // check = false 인 경우
-            // 현재 인덱스의 값이 ' '(스페이스) 인 경우 -> stack 의 값을 모두 pop, ' ' 출력
-            // 인덱스의 값이 문자 인 경우 -> stack에 담는다.
-        // 인덱스가 마지막 문자를 가리킬 경우 -> stack 의 모든 내용을 pop
-        for(int i = 0; i < str.length(); i++) {
-            if(str.charAt(i) == '<') {
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+
+            if(c == '<') {
                 while(!stack.isEmpty()) {
                     sb.append(stack.pop());
                 }
 
-                check = true;
-            }
-
-            if(str.charAt(i) == '>') {
-                sb.append(str.charAt(i));
-                check = false;
+                reverse = false;
+                sb.append(c);
 
                 continue;
             }
 
-            if(check) {
-                sb.append(str.charAt(i));
-            } else {
-                if(str.charAt(i) == ' ') {
+            if(c == '>') {
+                sb.append(c);
+                reverse = true;
+
+                continue;
+            }
+
+            if(reverse) {
+                if(c == ' ') {
                     while(!stack.isEmpty()) {
                         sb.append(stack.pop());
                     }
 
-                    sb.append(' ');
+                    sb.append(c);
                 } else {
-                    stack.push(str.charAt(i));
+                    stack.push(c);
                 }
+            } else {
+                sb.append(c);
             }
 
-            if(i == str.length() - 1) {
+            if(i == s.length() - 1) {
                 while(!stack.isEmpty()) {
                     sb.append(stack.pop());
                 }
@@ -59,7 +56,5 @@ public class 단어뒤집기2 {
         }
 
         System.out.println(sb);
-
-
     }
 }
