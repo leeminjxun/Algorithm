@@ -57,6 +57,7 @@ public class 거북이 {
 
             int area = (maxX - minX) * (maxY - minY);
             System.out.println(area);
+
         }
     }
 }
