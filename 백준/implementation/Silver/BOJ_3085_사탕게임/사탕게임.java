@@ -26,13 +26,13 @@ public class 사탕게임 {
 
         for(int row = 0; row < N; row++) {
             for(int col = 0; col < N; col++) {
-                if(row + 1 < N) {
+                if(row < N - 1) {
                     swap(row, col, row + 1, col);
                     check();
                     swap(row, col, row + 1, col);
                 }
 
-                if(col + 1 < N) {
+                if(col < N - 1) {
                     swap(row, col, row, col + 1);
                     check();
                     swap(row, col, row, col + 1);
