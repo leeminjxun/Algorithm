@@ -4,66 +4,63 @@ import java.io.*;
 import java.util.*;
 
 public class 드래곤커브 {
-    static boolean[][] arr = new boolean[102][102];
-    // 우, 상, 좌, 하
-    static int[] dx = {1, 0, -1, 0};
-    static int[] dy = {0, -1, 0, 1};
+    // 동, 북, 서, 남
+    static int[] dr = {0, -1, 0, 1};
+    static int[] dc = {1, 0, -1, 0};
+
+    static boolean[][] map;
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-        int T = Integer.parseInt(br.readLine());
-
-        // 0
-        // 0 -> 1
-        // 0 1 -> 2 1
-        // 0 1 2 1 -> 2 3 2 1
-
-        // (dir + 1) % 4 공식
         StringTokenizer st;
-        for(int testCase = 0; testCase < T; testCase++) {
+
+        int N = Integer.parseInt(br.readLine());
+
+        map = new boolean[101][101];
+
+        for(int testCase = 0; testCase < N; testCase++) {
             st = new StringTokenizer(br.readLine());
 
-            int x = Integer.parseInt(st.nextToken());
-            int y = Integer.parseInt(st.nextToken());
+            int c = Integer.parseInt(st.nextToken());
+            int r = Integer.parseInt(st.nextToken());
             int d = Integer.parseInt(st.nextToken());
-            int g = Integer.parseInt(st.nextToken());
+            int generation = Integer.parseInt(st.nextToken());
 
-            drawCurve(x, y, d, g);
-        }
+            LinkedList<Integer> dir = new LinkedList<>();
+            dir.add(d);
 
-        System.out.println(check());
-    }
-
-    static void drawCurve(int x, int y, int d, int generation) {
-        List<Integer> dirs = new ArrayList<>();
-        dirs.add(d);
-
-        for(int g = 0; g < generation; g++) {
-            int size = dirs.size();
-
-            for(int i = size - 1; i >= 0; i--) {
-                dirs.add((dirs.get(i) + 1) % 4);
+            for(int g = 0; g < generation; g++) {
+                for(int i = dir.size() - 1; i >= 0; i--) {
+                    dir.add((dir.get(i) + 1) % 4);
+                }
             }
+
+            Draw(c, r, dir);
         }
 
-        arr[y][x] = true;
-        for(int dir : dirs) {
-            x += dx[dir];
-            y += dy[dir];
+        System.out.println(checkCount());
 
-            arr[y][x] = true;
+    }
+
+    static void Draw(int c, int r, LinkedList<Integer> dir) {
+        map[r][c]= true;
+
+        for(int i = 0; i < dir.size(); i++) {
+            int d = dir.get(i);
+
+            r += dr[d];
+            c += dc[d];
+
+            map[r][c] = true;
         }
     }
 
-    static int check() {
+    static int checkCount() {
         int count = 0;
 
-        for(int i = 0; i < 101; i++) {
-            for(int j = 0; j < 101; j++) {
-                if(arr[i][j] && arr[i+1][j] && arr[i][j+1] && arr[i+1][j+1]) {
-                    count++;
-                }
+        for(int row  = 0; row < 100; row++) {
+            for(int col = 0; col < 100; col++) {
+                if(map[row][col] && map[row + 1][col] && map[row][col + 1] && map[row + 1][col + 1]) count++;
             }
         }
 
