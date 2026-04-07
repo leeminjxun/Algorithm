@@ -1,3 +1,3 @@
-# ✅ BOJ: 2720 세탁소 사장 동혁 (DP, Bronze3)
+# ✅ BOJ: 2720 세탁소 사장 동혁 (Greedy, Bronze3)
 
 https://www.acmicpc.net/problem/2720

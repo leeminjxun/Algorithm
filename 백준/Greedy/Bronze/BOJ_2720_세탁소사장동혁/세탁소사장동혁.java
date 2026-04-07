@@ -13,6 +13,7 @@ public class 세탁소사장동혁 {
         for(int testCase = 0; testCase < T; testCase++) {
             int price = Integer.parseInt(br.readLine());
 
+
             // Q : 25, D : 10, N = 5, P = 1
 
             int Q = 0, D = 0, N = 0, P = 0;
