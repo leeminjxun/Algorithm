@@ -14,6 +14,7 @@ public class 카드정렬하기 {
         for(int i = 0; i < N; i++) {
             pq.add(Long.parseLong(br.readLine()));
         }
+
         long totalSum = 0;
 
         while(pq.size() > 1) {
