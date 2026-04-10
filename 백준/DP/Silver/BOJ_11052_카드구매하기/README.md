@@ -1,4 +1,4 @@
-# ❌ BOJ: 11052 카드 구매하기 (DP, Silver1)
+# ✅ BOJ: 11052 카드 구매하기 (DP, Silver1)
 
 https://www.acmicpc.net/problem/11052
 
