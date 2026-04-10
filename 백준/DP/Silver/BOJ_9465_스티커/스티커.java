@@ -5,6 +5,7 @@ import java.util.*;
 
 public class 스티커 {
     public static void main(String[] args) throws Exception {
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
 

@@ -1,4 +1,4 @@
-# ❌ BOJ: 9465 스티커 (DP, Silver1)
+# ✅ BOJ: 9465 스티커 (DP, Silver1)
 
 https://www.acmicpc.net/problem/9465
 
