@@ -1,7 +1,6 @@
 package 백준.DP.Silver.BOJ_9095_123더하기;
 
 import java.io.*;
-import java.util.*;
 
 public class 일이삼더하기 {
     public static void main(String[] args) throws Exception {
