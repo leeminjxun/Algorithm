@@ -1,4 +1,4 @@
-# ❌ BOJ: 2293 동전1 (DP, Silver1)
+# 🔁 BOJ: 2293 동전1 (DP, Silver1)
 
 # https://www.acmicpc.net/problem/2293
 
