@@ -1,4 +1,4 @@
-# 📌 BOJ: 11722 가장 긴 감소하는 부분 수열 (DP, Silver2)
+# 🔁 BOJ: 11722 가장 긴 감소하는 부분 수열 (DP, Silver2)
 
 # https://www.acmicpc.net/problem/11722
 
