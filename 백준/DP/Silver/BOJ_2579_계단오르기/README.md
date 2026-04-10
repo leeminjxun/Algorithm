@@ -1,4 +1,4 @@
-# ❌ BOJ: 2579 계단오르기 (DP, Silver3)
+# 🔁 BOJ: 2579 계단오르기 (DP, Silver3)
 
 # https://www.acmicpc.net/problem/2579
 
