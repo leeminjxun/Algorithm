@@ -1,6 +1,6 @@
-# 📌 BOJ: 11726 2xN 타일링 (DP, Silver3)
+# ✅ BOJ: 11726 2xN 타일링 (DP, Silver3)
 
-# https://www.acmicpc.net/problem/11726
+https://www.acmicpc.net/problem/11726
 
 # 풀이 과정
 

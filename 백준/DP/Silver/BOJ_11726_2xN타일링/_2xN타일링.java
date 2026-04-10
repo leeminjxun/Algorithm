@@ -5,17 +5,21 @@ import java.util.*;
 
 public class _2xN타일링 {
     public static void main(String[] args) throws Exception {
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
+
+        if(N == 1) {
+            System.out.println("1");
+            return;
+        }
 
         int[][] dp = new int[2][N + 1];
 
         // 1칸 채워 넣은 경우
         dp[0][1] = 1;
         // 2칸 채워 넣은 경우
-        if(N > 1) {
-            dp[1][2] = 1;
-        }
+        dp[1][2] = 1;
 
         for(int i = 2; i <= N; i++) {
             // 정수 오버플로우 방지
