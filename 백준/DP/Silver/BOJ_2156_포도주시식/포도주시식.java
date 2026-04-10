@@ -14,13 +14,11 @@ public class 포도주시식 {
 
         // dp[N][0] -> 현재 와인잔을 마시지 않은 경우
         // dp[N][1] -> 현재 와인잔을 마신 경우
-        // dp[N][2] -> 현재 와인잔과 다음 와인잔 까지 마신 경우
+        // dp[N][2] -> 이전 와인잔을 마시고 현재 와인잔을 마시는 경우
 
         for(int i = 1; i <= N; i++) {
             wine[i] = Integer.parseInt(br.readLine());
         }
-
-        int maxDrink = 0;
 
         dp[1][0] = 0;
         dp[1][1] = wine[1];
