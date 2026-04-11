@@ -1,4 +1,4 @@
-# ❌ BOJ: 1520 내리막 길 (DP / DFS, Gold3)
+# 🔁 BOJ: 1520 내리막 길 (DP / DFS, Gold3)
 
 https://www.acmicpc.net/problem/1520
 

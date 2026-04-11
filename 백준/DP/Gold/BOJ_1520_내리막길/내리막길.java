@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.*;
 
 public class 내리막길 {
+
     static int[] dr = {1, 0, -1, 0};
     static int[] dc = {0, 1, 0, -1};
 
