@@ -4,6 +4,7 @@ import java.util.*;
 
 public class 치킨배달 {
 
+
     static int N, M;
 
     static List<int[]> houses = new ArrayList<>();
