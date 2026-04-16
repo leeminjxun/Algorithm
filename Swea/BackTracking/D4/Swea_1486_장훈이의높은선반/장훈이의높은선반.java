@@ -1,8 +1,9 @@
-package 백준;
+package Swea.BackTracking.D4.Swea_1486_장훈이의높은선반;
+
 import java.io.*;
 import java.util.*;
 
-public class Test {
+public class 장훈이의높은선반 {
     static int N, B, minH;
 
     static int[] member;
@@ -23,13 +24,14 @@ public class Test {
             member = new int[N];
 
             st = new StringTokenizer(br.readLine());
+
             for(int i = 0; i < N; i++) {
                 member[i] = Integer.parseInt(st.nextToken());
             }
 
             minH = Integer.MAX_VALUE;
 
-            dfs(0,0);
+            dfs(0, 0);
 
             int res = minH - B;
 
@@ -39,19 +41,17 @@ public class Test {
         System.out.println(sb);
     }
 
-    static void dfs(int index, int sum) {
-
+    static void dfs(int idx, int sum) {
         if(sum >= minH) return;
 
         if(sum >= B) {
             minH = Math.min(minH, sum);
-            return ;
+            return;
         }
 
-        if(index == N) return;
+        if(idx == N) return;
 
-        dfs(index + 1, sum + member[index]);
-        dfs(index + 1, sum);
-
+        dfs(idx + 1, sum + member[idx]);
+        dfs(idx + 1, sum);
     }
 }
