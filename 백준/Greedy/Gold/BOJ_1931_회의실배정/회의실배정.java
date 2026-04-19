@@ -5,6 +5,7 @@ import java.util.*;
 
 public class 회의실배정 {
     public static void main(String[] args) throws Exception {
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
         int N = Integer.parseInt(br.readLine());

@@ -1,4 +1,4 @@
-# ❌ BOJ: 1931 회의실 배정 (Greedy, Gold5)
+# 🔁 BOJ: 1931 회의실 배정 (Greedy, Gold5)
 
 https://www.acmicpc.net/problem/1931
 
