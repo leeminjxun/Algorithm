@@ -1,4 +1,4 @@
-# ❌ BOJ: 2294 동전 2 (DP, Gold5)
+# 🔁 BOJ: 2294 동전 2 (DP, Gold5)
 
 https://www.acmicpc.net/problem/2294
 

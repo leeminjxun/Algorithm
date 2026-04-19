@@ -31,6 +31,5 @@ public class 동전2 {
 
         System.out.println(dp[K] == Integer.MAX_VALUE ? -1 : dp[K]);
 
-
     }
 }
