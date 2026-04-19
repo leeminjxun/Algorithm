@@ -25,14 +25,15 @@ public class 강의실배정 {
 
         PriorityQueue<Integer> pq = new PriorityQueue<>();
 
-        pq.offer(lectures[0][1]);
-
-        for(int i = 1; i < N; i++) {
-            if(pq.peek() <= lectures[i][0]) {
-                pq.poll();
+        for(int i = 0; i < N; i++) {
+            if(pq.isEmpty()) {
+                pq.add(lectures[i][1]);
+            } else {
+                if(lectures[i][0] >= pq.peek()) {
+                    pq.poll();
+                }
+                pq.offer(lectures[i][1]);
             }
-
-            pq.offer(lectures[i][1]);
         }
 
         System.out.println(pq.size());

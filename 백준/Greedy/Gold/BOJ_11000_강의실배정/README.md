@@ -1,4 +1,4 @@
-# ❌ BOJ: 11000 강의실 배정 (Greedy / PriorityQueue, Gold4)
+# 🔁 BOJ: 11000 강의실 배정 (Greedy / PriorityQueue, Gold4)
 
 https://www.acmicpc.net/problem/11000
 
