@@ -1,4 +1,4 @@
-# ❌ BOJ: 2839 설탕 배달 (Greedy, Silver4)
+# 🔁 BOJ: 2839 설탕 배달 (Greedy, Silver4)
 
 https://www.acmicpc.net/problem/2839
 
