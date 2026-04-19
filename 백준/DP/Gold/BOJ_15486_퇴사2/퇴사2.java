@@ -19,11 +19,8 @@ public class 퇴사2 {
         for(int i = 1; i <= N; i++) {
             st = new StringTokenizer(br.readLine());
 
-            int t = Integer.parseInt(st.nextToken());
-            int p = Integer.parseInt(st.nextToken());
-
-            T[i] = t;
-            P[i] = p;
+            T[i] = Integer.parseInt(st.nextToken());
+            P[i] = Integer.parseInt(st.nextToken());
         }
 
         for(int i = 1; i <= N + 1; i++) {

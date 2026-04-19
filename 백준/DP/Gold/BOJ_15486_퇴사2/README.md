@@ -1,4 +1,4 @@
-# ❌ BOJ: 15486 퇴사2 (DP, Gold5)
+# 🔁 BOJ: 15486 퇴사2 (DP, Gold5)
 
 # https://www.acmicpc.net/problem/15486
 
