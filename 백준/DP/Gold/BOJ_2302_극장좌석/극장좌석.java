@@ -20,18 +20,18 @@ public class 극장좌석 {
         int M = Integer.parseInt(br.readLine());
 
         int vip = 0;
-        int lastVip = 0;
+        int prevVip = 0;
 
         int cnt = 1;
         for(int i = 0; i < M; i++) {
             vip = Integer.parseInt(br.readLine());
 
-            cnt *= dp[vip - lastVip - 1];
+            cnt *= dp[vip - prevVip - 1];
 
-            lastVip = vip;
+            prevVip = vip;
         }
 
-        cnt *= dp[N - lastVip];
+        cnt *= dp[N - prevVip];
 
         System.out.println(cnt);
     }

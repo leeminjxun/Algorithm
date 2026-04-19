@@ -1,4 +1,4 @@
-# ❌ BOJ: 2302 극장 좌석 (DP, Gold5)
+# 🔁 BOJ: 2302 극장 좌석 (DP, Gold5)
 
 https://www.acmicpc.net/problem/2302
 
