@@ -1,4 +1,4 @@
-# ❌ BOJ: 2011 암호코드 (DP , Gold5)
+# 🔁 BOJ: 2011 암호코드 (DP , Gold5)
 
 https://www.acmicpc.net/problem/2011
 

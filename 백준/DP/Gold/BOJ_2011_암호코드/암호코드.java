@@ -22,6 +22,8 @@ public class 암호코드 {
         }
 
         long[] dp = new long[N + 1];
+
+        // dp[2] 값 초기화를 위함
         dp[0] = 1;
         dp[1] = 1;
 
