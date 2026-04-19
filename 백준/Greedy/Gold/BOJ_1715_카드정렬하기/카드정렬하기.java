@@ -18,10 +18,10 @@ public class 카드정렬하기 {
         long totalSum = 0;
 
         while(pq.size() > 1) {
-            long first = pq.poll();
-            long second = pq.poll();
+            long card1 = pq.poll();
+            long card2 = pq.poll();
 
-            long currentSum = first + second;
+            long currentSum = card1 + card2;
             totalSum += currentSum;
 
             pq.add(currentSum);

@@ -1,4 +1,4 @@
-# ❌ BOJ: 1715 카드 정렬하기(Greedy, Gold4)
+# 🔁 BOJ: 1715 카드 정렬하기(Greedy, Gold4)
 
 https://www.acmicpc.net/problem/1715
 
