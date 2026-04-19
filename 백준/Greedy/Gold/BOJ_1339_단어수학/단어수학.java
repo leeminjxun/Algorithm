@@ -42,6 +42,5 @@ public class 단어수학 {
 
         System.out.println(totalSum);
 
-
     }
 }

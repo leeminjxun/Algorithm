@@ -1,4 +1,4 @@
-# ❌ BOJ: 1339 단어 수학 (Greedy, Gold4)
+# 🔁 BOJ: 1339 단어 수학 (Greedy, Gold4)
 
 https://www.acmicpc.net/problem/1339
 
