@@ -1,4 +1,4 @@
-# ❌ SWEA: 1486 장훈이의 높은 선반 (BackTracking , D4)
+# ❌ SWEA: 3234 준환이의 양팔 저울 (BackTracking , D4)
 
 # 풀이과정
 

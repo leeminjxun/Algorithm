@@ -11,6 +11,7 @@ public class 준환이의양팔저울 {
     static boolean[] visited;
 
     public static void main(String[] args) throws Exception {
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
 
