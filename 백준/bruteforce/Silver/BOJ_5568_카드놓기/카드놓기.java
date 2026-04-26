@@ -12,6 +12,7 @@ public class 카드놓기 {
     static Set<String> set = new HashSet<>();
 
     public static void main(String[] args) throws Exception {
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         N = Integer.parseInt(br.readLine());
