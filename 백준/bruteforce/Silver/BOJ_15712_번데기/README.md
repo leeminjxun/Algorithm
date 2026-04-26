@@ -1,4 +1,4 @@
-# ❌ BOJ: 15712 번데기 (완전탐색, Sliver5)
+# 🔁 BOJ: 15712 번데기 (완전탐색, Sliver5)
 
 https://www.acmicpc.net/problem/15712
 

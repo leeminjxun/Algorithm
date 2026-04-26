@@ -7,35 +7,5 @@ public class Test {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
 
-        int T = Integer.parseInt(br.readLine());
-
-        StringBuilder sb = new StringBuilder();
-        for(int testCase = 1; testCase <= T; testCase++) {
-            st = new StringTokenizer(br.readLine());
-
-            int N = Integer.parseInt(st.nextToken());
-            int K = Integer.parseInt(st.nextToken());
-
-            int[] arr = new int[N];
-            int[] dp = new int[K + 1];
-
-            dp[0] = 1;
-            st = new StringTokenizer(br.readLine());
-            for(int i = 0; i < N; i++) {
-                arr[i] = Integer.parseInt(st.nextToken());
-            }
-
-            for(int i = 0; i < N; i++) {
-                int a = arr[i];
-
-                for(int j = K; j >= a; j--) {
-                    dp[j] += dp[j - a];
-                }
-            }
-
-            sb.append("#" + testCase + " " + dp[K] + "\n");
-        }
-
-        System.out.println(sb);
     }
 }
