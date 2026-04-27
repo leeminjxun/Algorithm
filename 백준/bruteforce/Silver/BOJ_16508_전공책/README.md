@@ -1,4 +1,4 @@
-# ❌ BOJ: 16508 전공책 (완전탐색 / DFS, Silver3)
+# 🔁 BOJ: 16508 전공책 (완전탐색 / DFS, Silver3)
 
 https://www.acmicpc.net/problem/16508
 

@@ -3,61 +3,70 @@ import java.io.*;
 import java.util.*;
 
 public class Test {
+    static int N;
+    static int res = Integer.MAX_VALUE;
+
+    static int[] price, target;
+    static int[][] book;
+
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int N = Integer.parseInt(st.nextToken());
-        int K = Integer.parseInt(st.nextToken());
+        String s = br.readLine();
+        target = new int[26];
+        for(int i = 0; i < s.length(); i++) {
+            target[s.charAt(i) - 'A']++;
+        }
 
-        String[] dna = new String[N];
+        N = Integer.parseInt(br.readLine());
 
+        price = new int[N];
+        book = new int[N][26];
+
+        StringTokenizer st;
         for(int i = 0; i < N; i++) {
-            dna[i] = br.readLine();
+            st = new StringTokenizer(br.readLine());
+
+            price[i] = Integer.parseInt(st.nextToken());
+            String b = st.nextToken();
+
+            for(int j = 0; j < b.length(); j++) {
+                book[i][b.charAt(j) - 'A']++;
+            }
         }
 
-        int totalSum = 0;
+        dfs(0, 0, new int[26]);
 
-        StringBuilder sb = new StringBuilder();
+        System.out.println(res == Integer.MAX_VALUE ? -1 : res);
 
-        for(int i = 0; i < K; i++) {
-            int[] count = new int[4];
-
-            for(int j = 0; j < N; j++) {
-                char ch = dna[j].charAt(i);
-
-                if(ch == 'A') count[0]++;
-                if(ch == 'C') count[1]++;
-                if(ch == 'T') count[2]++;
-                if(ch == 'G') count[3]++;
-            }
-
-            int maxCount = 0;
-            int maxIndex = 0;
-
-            for(int k = 0; k < 4; k++) {
-                if(maxCount < count[k]) {
-                    maxCount = count[k];
-                    maxIndex = k;
-                }
-            }
-
-            totalSum += (N - maxCount);
-
-            sb.append(getChar(maxIndex));
-        }
-
-        sb.append("\n");
-
-        sb.append(totalSum);
-
-        System.out.println(sb);
     }
 
-    static char getChar(int idx) {
-        if(idx == 0) return 'A';
-        if(idx == 1) return 'C';
-        if(idx == 2) return 'T';
-        return 'G';
+    static void dfs(int depth, int totalPrice, int[] current) {
+        if(totalPrice > res) return ;
+
+        if(check(current)) {
+            res = Math.min(res, totalPrice);
+            return;
+        }
+
+        if(depth == N) return ;
+
+        int[] next = current.clone();
+        for(int i = 0; i < 26; i++) {
+            next[i] += book[depth][i];
+        }
+
+        dfs(depth + 1, totalPrice + price[depth], next);
+        dfs(depth + 1, totalPrice, current);
+    }
+
+    static boolean check(int[] current) {
+        for(int i = 0; i < 26; i++) {
+            if(current[i] < target[i]) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

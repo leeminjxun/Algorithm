@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.*;
 
 public class 전공책 {
+
     static int N;
     static int res = Integer.MAX_VALUE;
 
