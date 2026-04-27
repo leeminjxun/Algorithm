@@ -1,4 +1,4 @@
-# ❌ BOJ: 1969 DNA (완전탐색, Sliver4)
+# 🔁 BOJ: 1969 DNA (완전탐색, Sliver4)
 
 https://www.acmicpc.net/problem/1969
 

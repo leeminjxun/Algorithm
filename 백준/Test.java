@@ -3,47 +3,61 @@ import java.io.*;
 import java.util.*;
 
 public class Test {
-    static int n, k;
-
-    static String[] arr;
-
-    static boolean[] visited;
-
-    static HashSet<String> set = new HashSet<>();
-
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st;
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-        n = Integer.parseInt(br.readLine());
-        k = Integer.parseInt(br.readLine());
+        int N = Integer.parseInt(st.nextToken());
+        int K = Integer.parseInt(st.nextToken());
 
-        arr = new String[n];
-        visited = new boolean[n];
+        String[] dna = new String[N];
 
-        for(int i = 0; i < n; i++) {
-            arr[i] = br.readLine();
+        for(int i = 0; i < N; i++) {
+            dna[i] = br.readLine();
         }
 
-        dfs(0, "");
+        int totalSum = 0;
 
-        System.out.println(set.size());
+        StringBuilder sb = new StringBuilder();
 
+        for(int i = 0; i < K; i++) {
+            int[] count = new int[4];
+
+            for(int j = 0; j < N; j++) {
+                char ch = dna[j].charAt(i);
+
+                if(ch == 'A') count[0]++;
+                if(ch == 'C') count[1]++;
+                if(ch == 'T') count[2]++;
+                if(ch == 'G') count[3]++;
+            }
+
+            int maxCount = 0;
+            int maxIndex = 0;
+
+            for(int k = 0; k < 4; k++) {
+                if(maxCount < count[k]) {
+                    maxCount = count[k];
+                    maxIndex = k;
+                }
+            }
+
+            totalSum += (N - maxCount);
+
+            sb.append(getChar(maxIndex));
+        }
+
+        sb.append("\n");
+
+        sb.append(totalSum);
+
+        System.out.println(sb);
     }
 
-    static void dfs(int depth, String current) {
-        if(depth == k) {
-            set.add(current);
-
-            return;
-        }
-
-        for(int i = 0; i < n; i++) {
-            if(!visited[i]) {
-                visited[i] = true;
-                dfs(depth + 1, current + arr[i]);
-                visited[i] = false;
-            }
-        }
+    static char getChar(int idx) {
+        if(idx == 0) return 'A';
+        if(idx == 1) return 'C';
+        if(idx == 2) return 'T';
+        return 'G';
     }
 }
