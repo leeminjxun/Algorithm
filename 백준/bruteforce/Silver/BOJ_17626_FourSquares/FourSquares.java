@@ -16,6 +16,7 @@ public class FourSquares {
 
         for(int i = 1; i <= N; i++) {
 
+            // i 를 기준으로 1, 4, 9, 16 만큼 뒤에 있는 값 중 가장 작은 원소를 택한 값만 올린다.
             for(int j = 1; j * j <= i; j++) {
                 dp[i] = Math.min(dp[i], dp[i - j * j] + 1);
             }
