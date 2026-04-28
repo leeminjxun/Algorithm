@@ -1,4 +1,4 @@
-# ❌ BOJ: 2503 숫자 야구 (완전탐색, Sliver3)
+# 🔁 BOJ: 2503 숫자 야구 (완전탐색, Sliver3)
 
 https://www.acmicpc.net/problem/2503
 

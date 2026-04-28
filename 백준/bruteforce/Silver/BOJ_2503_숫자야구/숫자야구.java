@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.*;
 
 public class 숫자야구 {
+
     static class Hint {
         String number;
 
