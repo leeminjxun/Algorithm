@@ -15,34 +15,35 @@ public class Test {
         }
     }
 
-    static List<Hint> list;
+    static int N;
+
+    static List<Hint> h;
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
 
-        int N = Integer.parseInt(br.readLine());
-        list = new ArrayList<>();
+        N = Integer.parseInt(br.readLine());
+
+        h = new ArrayList<>();
 
         for(int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
 
-            list.add(new Hint(st.nextToken(),
+            h.add(new Hint(st.nextToken(),
                     Integer.parseInt(st.nextToken()),
                     Integer.parseInt(st.nextToken())));
         }
 
         int res = 0;
 
-        for(int i = 123; i <= 987; i++) {
+        for(int i = 123; i<= 987; i++) {
             boolean isMatch = true;
 
-            if(!valid(i)) continue;
+            if(!valid(String.valueOf(i))) continue;
 
-            for(int j = 0; j < N; j++) {
-                Hint h = list.get(j);
-
-                if(!check(String.valueOf(i), h)) {
+            for(Hint hint : h) {
+                if(!check(String.valueOf(i), hint)) {
                     isMatch = false;
                     break;
                 }
@@ -54,30 +55,28 @@ public class Test {
         System.out.println(res);
     }
 
-    static boolean check(String candidate, Hint hint) {
-        int s = 0;
-        int b = 0;
+    static boolean valid(String candidate) {
+        int a = candidate.charAt(0);
+        int b = candidate.charAt(1);
+        int c = candidate.charAt(2);
 
-        for(int i = 0; i < 3; i++) {
-            if(candidate.charAt(i) == hint.number.charAt(i)) s++;
+        if(a == '0' || b == '0' || c == '0') return false;
 
-            else if(hint.number.contains(String.valueOf(candidate.charAt(i)))) b++;
-        }
-
-        return s == hint.strike && b == hint.ball;
-    }
-
-    static boolean valid(int num) {
-        String target = String.valueOf(num);
-
-        char first = target.charAt(0);
-        char second = target.charAt(1);
-        char third = target.charAt(2);
-
-        if(first == '0' || second == '0' || third == '0') return false;
-
-        if(first == second || second == third || third == first) return false;
+        if(a == b || b == c || c == a) return false;
 
         return true;
+    }
+
+    static boolean check(String candidate, Hint hint) {
+        int sCnt = 0;
+        int bCnt = 0;
+
+        for(int i = 0; i < 3; i++) {
+            if(candidate.charAt(i) == hint.number.charAt(i)) sCnt++;
+
+            else if(candidate.contains(String.valueOf(hint.number.charAt(i)))) bCnt++;
+        }
+
+        return sCnt == hint.strike && bCnt == hint.ball;
     }
 }
