@@ -30,7 +30,7 @@ public class 가능한시험점수 {
             for(int i = 0; i < N; i++) {
                 int s = score[i];
 
-                for(int j = sum; j >= 0; j--) {
+                for(int j = sum - s; j >= 0; j--) {
                     if(dp[j]) {
                         dp[j + s] = true;
                     }
