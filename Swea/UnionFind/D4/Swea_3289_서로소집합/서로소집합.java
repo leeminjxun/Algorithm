@@ -1,9 +1,9 @@
-package Swea.UnionFind.D4;
+package Swea.UnionFind.D4.Swea_3289_서로소집합;
 
 import java.io.*;
 import java.util.*;
 
-public class Swea_3289_서로소집합 {
+public class 서로소집합 {
     static int[] parent;
 
     static int find(int x) {
