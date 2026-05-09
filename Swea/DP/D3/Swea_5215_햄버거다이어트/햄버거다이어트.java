@@ -5,6 +5,7 @@ import java.util.*;
 
 public class 햄버거다이어트 {
     public static void main(String[] args) throws Exception {
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
 

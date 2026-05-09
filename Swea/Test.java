@@ -12,29 +12,32 @@ public class Test {
 
         StringBuilder sb = new StringBuilder();
         for(int testCase = 1; testCase <= T; testCase++) {
-            sb.append("#").append(testCase).append(" ");
+            // taste 는 최댓값 But 칼로리는 정해진 만큼
             st = new StringTokenizer(br.readLine());
 
             int N = Integer.parseInt(st.nextToken());
-            int K = Integer.parseInt(st.nextToken());
+            // 최대 칼로리 값
+            int L = Integer.parseInt(st.nextToken());
 
-            int[] dp = new int[K + 1];
+            int[] dp = new int[L + 1];
 
-            dp[0] = 1;
-
-            st = new StringTokenizer(br.readLine());
             for(int i = 0; i < N; i++) {
-                int n = Integer.parseInt(st.nextToken());
+                st = new StringTokenizer(br.readLine());
 
-                for(int j = K; j >= n; j--) {
-                    if(dp[j - n] != 0) {
-                        dp[j] += dp[j - n];
-                    }
+                int taste = Integer.parseInt(st.nextToken());
+                int K = Integer.parseInt(st.nextToken());
+
+                for(int j = L; j >= K; j--) {
+                    dp[j] = Math.max(dp[j], dp[j - K] + taste);
                 }
+
             }
 
-            sb.append(dp[K]).append("\n");
+            Arrays.sort(dp);
 
+
+            sb.append("#").append(testCase).append(" ");
+            sb.append(dp[L]).append("\n");
         }
 
         System.out.print(sb);
