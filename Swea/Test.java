@@ -1,9 +1,9 @@
-package Swea.DP.D3.Swea_2817_부분수열의합;
+package Swea;
 
 import java.io.*;
 import java.util.*;
 
-public class 부분수열의합 {
+public class Test {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
@@ -12,7 +12,7 @@ public class 부분수열의합 {
 
         StringBuilder sb = new StringBuilder();
         for(int testCase = 1; testCase <= T; testCase++) {
-
+            sb.append("#").append(testCase).append(" ");
             st = new StringTokenizer(br.readLine());
 
             int N = Integer.parseInt(st.nextToken());
@@ -24,16 +24,19 @@ public class 부분수열의합 {
 
             st = new StringTokenizer(br.readLine());
             for(int i = 0; i < N; i++) {
-                int a = Integer.parseInt(st.nextToken());
+                int n = Integer.parseInt(st.nextToken());
 
-                for(int j = K; j >= a; j--) {
-                    dp[j] += dp[j - a];
+                for(int j = K; j >= n; j--) {
+                    if(dp[j - n] != 0) {
+                        dp[j] += dp[j - n];
+                    }
                 }
             }
 
-            sb.append("#" + testCase + " " + dp[K] + "\n");
+            sb.append(dp[K]).append("\n");
+
         }
 
-        System.out.println(sb);
+        System.out.print(sb);
     }
 }
