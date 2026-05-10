@@ -4,11 +4,10 @@ import java.io.*;
 import java.util.*;
 
 public class Test {
-    static String num;
-    static int change, N, max;
-    static char[] digit;
+    static int N, B, min;
 
-    static Set<String>[] set;
+    static int[] arr;
+    static boolean[] visited;
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -20,53 +19,43 @@ public class Test {
         for(int testCase = 1; testCase <= T; testCase++) {
             st = new StringTokenizer(br.readLine());
 
-            num = st.nextToken();
-            change = Integer.parseInt(st.nextToken());
+            N = Integer.parseInt(st.nextToken());
+            B = Integer.parseInt(st.nextToken());
 
-            digit = num.toCharArray();
-            N = num.length();
+            arr = new int[N];
+            visited = new boolean[N];
 
-            max = 0;
-
-            set = new HashSet[change + 1];
-
-            for(int i = 0; i <= change; i++) {
-                set[i] = new HashSet<>();
+            st = new StringTokenizer(br.readLine());
+            for(int i = 0; i < N; i++) {
+                arr[i] = Integer.parseInt(st.nextToken());
             }
-            dfs(0, num);
 
-            sb.append("#").append(testCase).append(" ").append(max).append("\n");
+            min = Integer.MAX_VALUE;
+
+            dfs(0, 0);
+
+            sb.append("#").append(testCase).append(" ");
+            sb.append(min == Integer.MAX_VALUE ? B : min - B).append("\n");
 
         }
 
         System.out.print(sb);
     }
 
-    static void dfs(int depth, String num) {
-        if(set[depth].contains(num)) return;
-        set[depth].add(num);
+    static void dfs(int depth, int sum) {
+        if(sum > min) return;
 
-        if(depth == change) {
-            max = Math.max(max, Integer.parseInt(num));
+        if(sum >= B) {
+            min = Math.min(min, sum);
+
             return;
         }
 
-
-        for(int i = 0; i < N - 1; i++) {
-            for(int j = i + 1; j < N; j++) {
-                dfs(depth + 1, changeNum(num, i, j));
-            }
+        if(depth == N) {
+            return;
         }
 
-    }
-
-    static String changeNum(String num, int i, int j) {
-        char[] digit = num.toCharArray();
-
-        char temp = digit[i];
-        digit[i] = digit[j];
-        digit[j] = temp;
-
-        return String.valueOf(digit);
+        dfs(depth + 1, sum + arr[depth]);
+        dfs(depth + 1, sum);
     }
 }

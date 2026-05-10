@@ -1,4 +1,4 @@
-# ❌ SWEA: 1486 장훈이의 높은 선반 (BackTracking , D4)
+# 🔁 SWEA: 1486 장훈이의 높은 선반 (BackTracking , D4)
 
 # 풀이과정
 

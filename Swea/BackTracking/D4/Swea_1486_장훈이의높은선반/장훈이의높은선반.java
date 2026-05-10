@@ -9,6 +9,7 @@ public class 장훈이의높은선반 {
     static int[] member;
 
     public static void main(String[] args) throws Exception {
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
 
