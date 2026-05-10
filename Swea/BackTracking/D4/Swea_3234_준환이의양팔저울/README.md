@@ -1,4 +1,4 @@
-# ❌ SWEA: 3234 준환이의 양팔 저울 (BackTracking , D4)
+# 🔁 SWEA: 3234 준환이의 양팔 저울 (BackTracking , D4)
 
 # 풀이과정
 

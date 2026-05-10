@@ -52,6 +52,7 @@ public class 준환이의양팔저울 {
 
         if(left >= total - left) {
             cnt += factorial(N - depth) * (int) Math.pow(2, N - depth);
+            return;
         }
 
         for(int i = 0; i < N; i++) {
