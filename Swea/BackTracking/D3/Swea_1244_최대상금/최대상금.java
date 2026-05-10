@@ -49,21 +49,21 @@ public class 최대상금 {
         if(visited[cnt].contains(num)) return;
         visited[cnt].add(num);
 
-        char[] arr = num.toCharArray();
-
-        for(int i = 0; i < arr.length - 1; i++) {
-            for(int j = i + 1; j < arr.length; j++) {
-                change(arr, i, j);
-                dfs(new String(arr), cnt + 1);
-                change(arr, i, j);
+        for(int i = 0; i < num.length() - 1; i++) {
+            for(int j = i + 1; j < num.length(); j++) {
+                dfs(change(num, i, j), cnt + 1);
             }
         }
 
     }
 
-    static void change(char[] arr , int i, int j) {
-        char temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+    static String change(String num , int i, int j) {
+        char[] digit = num.toCharArray();
+
+        char temp = digit[i];
+        digit[i] = digit[j];
+        digit[j] = temp;
+
+        return String.valueOf(digit);
     }
 }

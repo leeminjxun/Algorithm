@@ -4,6 +4,12 @@ import java.io.*;
 import java.util.*;
 
 public class Test {
+    static String num;
+    static int change, N, max;
+    static char[] digit;
+
+    static Set<String>[] set;
+
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
@@ -12,34 +18,55 @@ public class Test {
 
         StringBuilder sb = new StringBuilder();
         for(int testCase = 1; testCase <= T; testCase++) {
-            // taste 는 최댓값 But 칼로리는 정해진 만큼
             st = new StringTokenizer(br.readLine());
 
-            int N = Integer.parseInt(st.nextToken());
-            // 최대 칼로리 값
-            int L = Integer.parseInt(st.nextToken());
+            num = st.nextToken();
+            change = Integer.parseInt(st.nextToken());
 
-            int[] dp = new int[L + 1];
+            digit = num.toCharArray();
+            N = num.length();
 
-            for(int i = 0; i < N; i++) {
-                st = new StringTokenizer(br.readLine());
+            max = 0;
 
-                int taste = Integer.parseInt(st.nextToken());
-                int K = Integer.parseInt(st.nextToken());
+            set = new HashSet[change + 1];
 
-                for(int j = L; j >= K; j--) {
-                    dp[j] = Math.max(dp[j], dp[j - K] + taste);
-                }
-
+            for(int i = 0; i <= change; i++) {
+                set[i] = new HashSet<>();
             }
+            dfs(0, num);
 
-            Arrays.sort(dp);
+            sb.append("#").append(testCase).append(" ").append(max).append("\n");
 
-
-            sb.append("#").append(testCase).append(" ");
-            sb.append(dp[L]).append("\n");
         }
 
         System.out.print(sb);
+    }
+
+    static void dfs(int depth, String num) {
+        if(set[depth].contains(num)) return;
+        set[depth].add(num);
+
+        if(depth == change) {
+            max = Math.max(max, Integer.parseInt(num));
+            return;
+        }
+
+
+        for(int i = 0; i < N - 1; i++) {
+            for(int j = i + 1; j < N; j++) {
+                dfs(depth + 1, changeNum(num, i, j));
+            }
+        }
+
+    }
+
+    static String changeNum(String num, int i, int j) {
+        char[] digit = num.toCharArray();
+
+        char temp = digit[i];
+        digit[i] = digit[j];
+        digit[j] = temp;
+
+        return String.valueOf(digit);
     }
 }

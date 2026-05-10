@@ -1,4 +1,4 @@
-# ❌ SWEA: 1244 최대상금 (BackTracking , D3)
+# 🔁 SWEA: 1244 최대상금 (BackTracking , D3)
 
 # 풀이과정
 
