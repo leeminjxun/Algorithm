@@ -31,7 +31,7 @@ public class 나무높이 {
                 int diff = max - trees[i];
 
                 even += diff / 2;
-                odd += diff & 2;
+                odd += diff % 2;
             }
 
             // 균형 맞추기

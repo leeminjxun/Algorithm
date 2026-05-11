@@ -17,60 +17,48 @@ public class Test {
 
         StringBuilder sb = new StringBuilder();
         for(int testCase = 1; testCase <= T; testCase++) {
-            N = Integer.parseInt(br.readLine());
+            int N = Integer.parseInt(br.readLine());
 
-            arr = new int[N];
-            visited = new boolean[N];
+            int[] trees = new int[N];
 
-            totalSum = 0;
+            int maxH = 0;
 
             st = new StringTokenizer(br.readLine());
             for(int i = 0; i < N; i++) {
-                arr[i] = Integer.parseInt(st.nextToken());
-                totalSum += arr[i];
+                trees[i] = Integer.parseInt(st.nextToken());
+                maxH = Math.max(maxH, trees[i]);
             }
 
-            res = 0;
+            int even = 0;
+            int odd = 0;
 
-            dfs(0, 0, 0);
+            for(int i = 0; i < N; i++) {
+                int diff = maxH - trees[i];
 
-            sb.append("#").append(testCase).append(" ").append(res).append("\n");
+                even += diff / 2;
+                odd += diff % 2;
+            }
+
+            if(even > odd) {
+                while(Math.abs(even - odd) > 1) {
+                    even--;
+                    odd += 2;
+                }
+            }
+
+            sb.append("#").append(testCase).append(" ");
+
+            if(even > odd) {
+                sb.append(even * 2);
+            } else if(even < odd) {
+                sb.append(odd * 2 - 1);
+            } else {
+                sb.append(even + odd);
+            }
+            sb.append("\n");
         }
 
         System.out.print(sb);
-    }
-
-    static void dfs(int depth, int left, int right) {
-        if(right > left) return;
-
-        if(depth == N) {
-            res++;
-            return;
-        }
-
-        if(left >= totalSum - left) {
-            res += factorial(N - depth) * (int) Math.pow(2, N - depth);
-            return;
-        }
-
-        for(int i = 0; i < N; i++) {
-            if(!visited[i]) {
-                visited[i] = true;
-                dfs(depth + 1, left + arr[i], right);
-                dfs(depth + 1, left, right + arr[i]);
-                visited[i] = false;
-            }
-        }
-    }
-
-    static int factorial(int n) {
-        int fac = 1;
-
-        for(int i = 1; i <= n; i++) {
-            fac *= i;
-        }
-
-        return fac;
     }
 
 }
