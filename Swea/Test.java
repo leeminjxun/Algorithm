@@ -14,27 +14,34 @@ public class Test {
         for(int testCase = 1; testCase <= T; testCase++) {
             int N = Integer.parseInt(br.readLine());
 
-            int[] cost = new int[N];
+            int[] lectures = new int[7];
 
             st = new StringTokenizer(br.readLine());
-            for(int i = 0; i < N; i++) {
-                cost[i] = Integer.parseInt(st.nextToken());
+            for(int i = 0; i < 7; i++) {
+                lectures[i] = Integer.parseInt(st.nextToken());
             }
 
-            long profit = 0;
-            int exp = 0;
+            int minRes = Integer.MAX_VALUE;
+            int weekend = 0;
 
-            for(int i = N - 1; i >= 0; i--) {
-                if(cost[i] > exp) {
-                    exp = cost[i];
+            for(int day = 0; day < 7; day++) {
+                int lc = N;
+                int now = day;
+
+                int res = 0;
+                while(lc > 0) {
+                    if(lectures[now] == 1) {
+                        lc--;
+                    }
+
+                    now = (now + 1) % 7;
+                    res++;
                 }
 
-                if(cost[i] < exp) {
-                    profit += (exp - cost[i]);
-                }
+                minRes = Math.min(minRes, res);
             }
 
-            sb.append("#").append(testCase).append(" ").append(profit).append("\n");
+            sb.append("#").append(testCase).append(" ").append(minRes).append("\n");
         }
 
         System.out.print(sb);

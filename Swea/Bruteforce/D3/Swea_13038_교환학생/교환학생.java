@@ -14,35 +14,34 @@ public class 교환학생 {
         for(int testCase = 1; testCase <= T; testCase++) {
             int N = Integer.parseInt(br.readLine());
 
-            int[] A = new int[7];
+            int[] lectures = new int[7];
 
             st = new StringTokenizer(br.readLine());
             for(int i = 0; i < 7; i++) {
-                A[i] = Integer.parseInt(st.nextToken());
+                lectures[i] = Integer.parseInt(st.nextToken());
             }
 
-            long minCnt = Integer.MAX_VALUE;
-            for(int i = 0; i < 7; i++) {
+            int minRes = Integer.MAX_VALUE;
+            int weekend = 0;
 
-                int idx = i;
-                long cnt = 0;
+            for(int day = 0; day < 7; day++) {
+                int lc = N;
+                int now = day;
 
-                int n = 0;
-                while(N > n) {
-                    idx %= 7;
-
-                    if(A[idx] == 1) {
-                        n++;
+                int res = 0;
+                while(lc > 0) {
+                    if(lectures[now] == 1) {
+                        lc--;
                     }
 
-                    cnt++;
-                    idx++;
+                    now = (now + 1) % 7;
+                    res++;
                 }
 
-                minCnt = Math.min(minCnt, cnt);
+                minRes = Math.min(minRes, res);
             }
 
-            sb.append("#").append(testCase).append(" ").append(minCnt).append("\n");
+            sb.append("#").append(testCase).append(" ").append(minRes).append("\n");
         }
 
         System.out.print(sb);
