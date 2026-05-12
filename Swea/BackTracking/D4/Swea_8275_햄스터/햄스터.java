@@ -1,9 +1,9 @@
-package Swea;
+package Swea.BackTracking.D4.Swea_8275_햄스터;
 
 import java.io.*;
 import java.util.*;
 
-public class Test {
+public class 햄스터 {
     static int N, X, M, maxSum;
 
     static int[] L, R, S, cage, ans;
@@ -25,9 +25,11 @@ public class Test {
             L = new int[M];
             R = new int[M];
             S = new int[M];
+
             for(int i = 0; i < M; i++) {
                 st = new StringTokenizer(br.readLine());
 
+                // 인덱스 계산 편의를 위해 -1
                 L[i] = Integer.parseInt(st.nextToken()) - 1;
                 R[i] = Integer.parseInt(st.nextToken()) - 1;
                 S[i] = Integer.parseInt(st.nextToken());
@@ -37,6 +39,7 @@ public class Test {
             ans = new int[N];
 
             maxSum = -1;
+
             dfs(0, 0);
 
             sb.append("#").append(testCase);
@@ -48,8 +51,8 @@ public class Test {
                 }
             }
             sb.append("\n");
-        }
 
+        }
         System.out.print(sb);
     }
 
@@ -61,20 +64,18 @@ public class Test {
                     ans = cage.clone();
                 }
             }
-
-            return;
+            return ;
         }
 
         for(int i = 0; i <= X; i++) {
             cage[depth] = i;
-            dfs(depth + 1, sum += i);
+            dfs(depth + 1, sum + i);
         }
     }
 
     static boolean isValid() {
         for(int i = 0; i < M; i++) {
             int sum = 0;
-
             for(int j = L[i]; j <= R[i]; j++) {
                 sum += cage[j];
             }
@@ -84,6 +85,4 @@ public class Test {
 
         return true;
     }
-
-
 }
