@@ -1,9 +1,9 @@
-package Swea;
+package Swea.Greedy.D2.Swea_1859_백만장자프로젝트;
 
 import java.io.*;
 import java.util.*;
 
-public class Test {
+public class 백만장자프로젝트 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
