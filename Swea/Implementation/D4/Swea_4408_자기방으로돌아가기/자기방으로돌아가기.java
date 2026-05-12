@@ -18,32 +18,25 @@ public class 자기방으로돌아가기 {
 
             for(int i = 0; i < N; i++) {
                 st = new StringTokenizer(br.readLine());
+                int currentRoom = Integer.parseInt(st.nextToken());
+                int backRoom = Integer.parseInt(st.nextToken());
 
-                int current = Integer.parseInt(st.nextToken());
-                int back = Integer.parseInt(st.nextToken());
+                int start = Math.min(currentRoom, backRoom);
+                int end = Math.max(currentRoom, backRoom);
 
-                int start = Math.min(current, back);
-                int end = Math.max(current, back);
+                start += (start % 2 == 0) ? -1 : 0;
+                end += (end % 2 != 0) ? 1 : 0;
 
-                start += (start % 2 == 0) ? - 1 : 0;
-                end += (end % 2 == 0) ? 0 : 1;
-
-                for(int s = start; s <= end; s++) {
-                    room[s]++;
+                for(int check = start; check <= end; check++) {
+                    room[check] += 1;
                 }
-            }
+             }
 
-            int res = 0;
+            Arrays.sort(room);
 
-            for(int r : room) {
-                res = Math.max(res, r);
-            }
-
-            sb.append("#").append(testCase).append(" ").append(res).append("\n");
-
+            sb.append("#").append(testCase).append(" ").append(room[400]).append("\n");
         }
 
-        System.out.println(sb);
-
+        System.out.print(sb);
     }
 }
