@@ -4,10 +4,6 @@ import java.io.*;
 import java.util.*;
 
 public class Test {
-    static int N, X, M, maxSum;
-
-    static int[] L, R, S, cage, ans;
-
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
@@ -18,72 +14,13 @@ public class Test {
         for(int testCase = 1; testCase <= T; testCase++) {
             st = new StringTokenizer(br.readLine());
 
-            N = Integer.parseInt(st.nextToken());
-            X = Integer.parseInt(st.nextToken());
-            M = Integer.parseInt(st.nextToken());
+            int N = Integer.parseInt(st.nextToken());
+            int M = Integer.parseInt(st.nextToken());
 
-            L = new int[M];
-            R = new int[M];
-            S = new int[M];
-            for(int i = 0; i < M; i++) {
-                st = new StringTokenizer(br.readLine());
 
-                L[i] = Integer.parseInt(st.nextToken()) - 1;
-                R[i] = Integer.parseInt(st.nextToken()) - 1;
-                S[i] = Integer.parseInt(st.nextToken());
-            }
-
-            cage = new int[N];
-            ans = new int[N];
-
-            maxSum = -1;
-            dfs(0, 0);
-
-            sb.append("#").append(testCase);
-            if(maxSum == -1) {
-                sb.append(" ").append("-1");
-            } else {
-                for(int a : ans) {
-                    sb.append(" ").append(a);
-                }
-            }
-            sb.append("\n");
         }
 
         System.out.print(sb);
     }
-
-    static void dfs(int depth, int sum) {
-        if(depth == N) {
-            if(isValid()) {
-                if(sum > maxSum) {
-                    maxSum = sum;
-                    ans = cage.clone();
-                }
-            }
-
-            return;
-        }
-
-        for(int i = 0; i <= X; i++) {
-            cage[depth] = i;
-            dfs(depth + 1, sum += i);
-        }
-    }
-
-    static boolean isValid() {
-        for(int i = 0; i < M; i++) {
-            int sum = 0;
-
-            for(int j = L[i]; j <= R[i]; j++) {
-                sum += cage[j];
-            }
-
-            if(sum != S[i]) return false;
-        }
-
-        return true;
-    }
-
 
 }
