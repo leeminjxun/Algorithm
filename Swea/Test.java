@@ -10,38 +10,21 @@ public class Test {
 
         int T = Integer.parseInt(br.readLine());
 
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder() ;
         for(int testCase = 1; testCase <= T; testCase++) {
-            int N = Integer.parseInt(br.readLine());
+            String init = br.readLine();
 
-            int[] lectures = new int[7];
+            int bit = 0;
+            int cnt = 0;
 
-            st = new StringTokenizer(br.readLine());
-            for(int i = 0; i < 7; i++) {
-                lectures[i] = Integer.parseInt(st.nextToken());
-            }
-
-            int minRes = Integer.MAX_VALUE;
-            int weekend = 0;
-
-            for(int day = 0; day < 7; day++) {
-                int lc = N;
-                int now = day;
-
-                int res = 0;
-                while(lc > 0) {
-                    if(lectures[now] == 1) {
-                        lc--;
-                    }
-
-                    now = (now + 1) % 7;
-                    res++;
+            for(int i = 0; i < init.length(); i++) {
+                if(Integer.parseInt(String.valueOf(init.charAt(i))) != bit) {
+                    cnt++;
+                    bit = 1 - bit;
                 }
-
-                minRes = Math.min(minRes, res);
             }
 
-            sb.append("#").append(testCase).append(" ").append(minRes).append("\n");
+            sb.append("#").append(testCase).append(" ").append(cnt);
         }
 
         System.out.print(sb);
