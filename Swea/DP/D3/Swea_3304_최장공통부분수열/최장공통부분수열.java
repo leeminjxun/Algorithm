@@ -29,7 +29,7 @@ public class 최장공통부분수열 {
                 }
             }
 
-            sb.append("#").append(testCase).append(" ").append(dp[s1.length()][s2.length()]).append("\n");
+            sb.append("#").append(testCase).append(" ").append(dp[s1.length()][s2.length()]);
         }
 
         System.out.println(sb);

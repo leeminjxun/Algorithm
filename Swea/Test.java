@@ -12,19 +12,30 @@ public class Test {
 
         StringBuilder sb = new StringBuilder() ;
         for(int testCase = 1; testCase <= T; testCase++) {
-            String init = br.readLine();
+            sb.append("#").append(testCase);
 
-            int bit = 0;
-            int cnt = 0;
+            int N = Integer.parseInt(br.readLine());
 
-            for(int i = 0; i < init.length(); i++) {
-                if(Integer.parseInt(String.valueOf(init.charAt(i))) != bit) {
-                    cnt++;
-                    bit = 1 - bit;
+            PriorityQueue<Long> pq = new PriorityQueue<>();
+
+            st = new StringTokenizer(br.readLine());
+            for(int i = 0; i < N * 2; i++) {
+                Long price = Long.parseLong(st.nextToken());
+
+                if(pq.isEmpty()) {
+                    pq.add(price);
+                } else {
+                    long disCount = (price / 4) * 3;
+
+                    if(pq.peek() == disCount) {
+                        sb.append(" ").append(pq.poll());
+                    } else {
+                        pq.add(price);
+                    }
                 }
             }
 
-            sb.append("#").append(testCase).append(" ").append(cnt);
+            sb.append("\n");
         }
 
         System.out.print(sb);
