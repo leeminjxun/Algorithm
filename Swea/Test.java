@@ -4,6 +4,14 @@ import java.io.*;
 import java.util.*;
 
 public class Test {
+    static int N;
+
+    static double max;
+
+    static double[][] P;
+
+    static boolean[] visited;
+
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
@@ -12,32 +20,44 @@ public class Test {
 
         StringBuilder sb = new StringBuilder() ;
         for(int testCase = 1; testCase <= T; testCase++) {
-            sb.append("#").append(testCase);
+            N = Integer.parseInt(br.readLine());
 
-            int N = Integer.parseInt(br.readLine());
+            P = new double[N][N];
+            visited = new boolean[N];
 
-            PriorityQueue<Long> pq = new PriorityQueue<>();
-
-            st = new StringTokenizer(br.readLine());
-            for(int i = 0; i < N * 2; i++) {
-                Long price = Long.parseLong(st.nextToken());
-
-                if(pq.isEmpty()) {
-                    pq.add(price);
-                } else {
-                    long disCount = (price / 4) * 3;
-
-                    if(pq.peek() == disCount) {
-                        sb.append(" ").append(pq.poll());
-                    } else {
-                        pq.add(price);
-                    }
+            for(int i = 0; i < N; i++) {
+                st = new StringTokenizer(br.readLine());
+                for(int j = 0; j < N; j++) {
+                    P[i][j] = Double.parseDouble(st.nextToken()) / 100.0;
                 }
             }
 
-            sb.append("\n");
+            max = 0.0;
+
+            dfs(0, 1.0);
+
+            sb.append("#").append(testCase).append(" ");
+            sb.append(String.format("%.6f", max * 100.0)).append("\n");
         }
 
         System.out.print(sb);
     }
+
+    static void dfs(int depth, double sum) {
+        if(sum <= max) return;
+
+        if(depth == N) {
+            max = Math.max(max, sum);
+            return;
+        }
+
+        for(int i = 0; i < N; i++) {
+            if(!visited[i]) {
+                visited[i] = true;
+                dfs(depth + 1, sum * P[depth][i]);
+                visited[i] = false;
+            }
+        }
+    }
+
 }

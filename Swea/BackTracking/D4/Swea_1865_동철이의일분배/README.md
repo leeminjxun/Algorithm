@@ -1,4 +1,4 @@
-# ❌ SWEA: 1865 동철이의 일 분배 (BackTracking , D4)
+# 🔁 SWEA: 1865 동철이의 일 분배 (BackTracking , D4)
 
 # 풀이과정
 

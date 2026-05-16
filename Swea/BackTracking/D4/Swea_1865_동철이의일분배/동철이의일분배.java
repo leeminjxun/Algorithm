@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.*;
 
 public class 동철이의일분배 {
+
     static int N;
     static double res;
     static double[][] P;
