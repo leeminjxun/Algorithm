@@ -13,11 +13,12 @@ public class 상원이의연속합 {
         StringBuilder sb = new StringBuilder();
         for(int testCase = 1; testCase <= T; testCase++) {
             int N = Integer.parseInt(br.readLine());
-            int ans = 0;
 
             int start = 1;
             int end = 1;
             int sum = 1;
+
+            int ans = 0;
 
             while(start <= N) {
                 if(sum == N) {
