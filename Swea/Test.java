@@ -6,38 +6,25 @@ import java.util.*;
 public class Test {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st;
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int T = Integer.parseInt(br.readLine());
+        int N = Integer.parseInt(st.nextToken());
+        int K = Integer.parseInt(st.nextToken());
 
-        StringBuilder sb = new StringBuilder() ;
-        for(int testCase = 1; testCase <= T; testCase++) {
-            int N = Integer.parseInt(br.readLine());
+        int[][] dp = new int[K + 1][N + 1];
 
-            int sum = 1;
-            int start = 1;
-            int end = 1;
+        Arrays.fill(dp[1], 1);
 
-            int cnt = 0;
+        for(int k = 1; k < K; k++) {
+            for(int n = 0; n <= N; n++) {
+                for(int m = 0; m <= N; m++) {
+                    if(n + m > N) continue;
 
-            while(start <= N) {
-                if(sum > N) {
-                    sum -= start;
-                    start++;
-                } else if(sum < N) {
-                    end++;
-                    sum += end;
-                } else {
-                    cnt++;
-
-                    sum -= start;
-                    start++;
+                    dp[k + 1][n + m] += dp[k][n] % 1000000000;
                 }
             }
-
-            sb.append("#").append(testCase).append(" ").append(cnt).append("\n");
         }
 
-        System.out.print(sb);
+        System.out.print(dp[K][N] % 1000000000);
     }
 }
