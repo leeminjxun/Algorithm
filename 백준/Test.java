@@ -3,49 +3,41 @@ import java.io.*;
 import java.util.*;
 
 public class Test {
-    static int N, K;
-    static String[] cards;
-    static boolean[] visited;
-    static Set<String> set;
-
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
 
-        st = new StringTokenizer(br.readLine());
+        int N = Integer.parseInt(br.readLine());
 
-        N = Integer.parseInt(st.nextToken());
-        K = Integer.parseInt(st.nextToken());
-
-        cards = new String[N];
-
-        st = new StringTokenizer(br.readLine());
-        for(int i = 0; i < N; i++) {
-            cards[i] = st.nextToken();
-        }
-
-        visited = new boolean[N];
-        set = new HashSet<>();
-        dfs(0, "");
-
-        System.out.print(set.size());
-    }
-
-    static void dfs(int depth, String num) {
-        if(set.contains(num)) return;
-
-        if(depth == K) {
-            set.add(num);
+        if(N < 3) {
+            System.out.print(N);
             return;
         }
 
+        int[] A = new int[N];
+
+        st = new StringTokenizer(br.readLine());
         for(int i = 0; i < N; i++) {
-            if(!visited[i]) {
-                visited[i] = true;
-                dfs(depth + 1, num + cards[i]);
-                visited[i] = false;
+            A[i] = Integer.parseInt(st.nextToken());
+        }
+
+        Arrays.sort(A);
+
+        int res = 2;
+
+        // i 는 가장 작은 두 수 a 와 b
+        // j 는 가장 큰 수 c 를 나타낸다.
+
+        for(int i = 0; i < N - 1; i++) {
+            for(int j = N - 1; j > i + 2; j--) {
+                if(A[i] + A[i + 1] > A[j]) {
+                    res = Math.max(res, j - i + 1);
+                    break;
+                }
             }
         }
+
+        System.out.print(res);
 
     }
 }
