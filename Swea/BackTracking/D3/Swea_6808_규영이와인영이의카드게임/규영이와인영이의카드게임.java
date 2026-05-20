@@ -30,15 +30,15 @@ public class 규영이와인영이의카드게임 {
             gyu_arr = new int[9];
             in_arr = new int[9];
 
-            boolean[] inPossible = new boolean[19];
+            boolean[] cards = new boolean[19];
             for(int i = 0; i < 9; i++) {
                 gyu_arr[i] = Integer.parseInt(st.nextToken());
-                inPossible[gyu_arr[i]] = true;
+                cards[gyu_arr[i]] = true;
             }
 
             int idx = 0;
             for(int i = 1; i <= 18; i++) {
-                if(!inPossible[i]) in_arr[idx++] = i;
+                if(!cards[i]) in_arr[idx++] = i;
             }
 
             visited = new boolean[9];
