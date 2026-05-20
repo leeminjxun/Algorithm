@@ -36,6 +36,7 @@ public class NQueen {
 
         for(int col = 0; col < N; col++) {
             if(check(row, col)) {
+                // visited 배열은 덮어쓰기로, 분기에 따른 초기화 X
                 visited[row] = col;
                 dfs(row + 1);
             }
@@ -44,7 +45,7 @@ public class NQueen {
     }
 
     static boolean check(int row, int col) {
-
+        // visited[row] 에서 row 는 0 부터 오름차순 증가하기에, row 이상의 행은 비교할 필요가 없다.
         for(int i = 0; i < row; i++) {
             if(visited[i] == col) return false;
 

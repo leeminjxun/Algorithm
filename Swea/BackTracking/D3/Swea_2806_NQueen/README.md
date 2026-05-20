@@ -1,4 +1,4 @@
-# ❌ SWEA: 2806 N-Queen (BackTracking , D3)
+# 🔁 SWEA: 2806 N-Queen (BackTracking , D3)
 
 # 풀이과정
 
