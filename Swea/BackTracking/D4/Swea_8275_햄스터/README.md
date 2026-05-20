@@ -1,4 +1,4 @@
-# ❌ SWEA: 8275 햄스터 (BackTracking , D4)
+# 🔁 SWEA: 8275 햄스터 (BackTracking , D4)
 
 # 풀이과정
 

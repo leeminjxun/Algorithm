@@ -5,7 +5,6 @@ import java.util.*;
 
 public class 햄스터 {
     static int N, X, M, maxSum;
-
     static int[] L, R, S, cage, ans;
 
     public static void main(String[] args) throws Exception {
