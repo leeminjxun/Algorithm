@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.*;
 
 public class 서로소집합 {
+
     static int[] parent;
 
     static int find(int x) {

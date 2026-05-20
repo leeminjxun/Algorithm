@@ -1,4 +1,4 @@
-# ❌ SWEA: 3289 서로소 집합 (union-find , D3)
+# 🔁 SWEA: 3289 서로소 집합 (union-find , D3)
 
 # 풀이과정
 
