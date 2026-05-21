@@ -1,9 +1,9 @@
-package Swea;
+package Swea.Greedy.D3.Swea_4831_전기버스;
 
 import java.io.*;
 import java.util.*;
 
-public class Test {
+public class 전기버스 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
@@ -14,11 +14,8 @@ public class Test {
         for(int testCase = 1; testCase <= T; testCase++) {
             st = new StringTokenizer(br.readLine());
 
-            // 충전된 버스가 이동 가능한 정류장 수
             int K = Integer.parseInt(st.nextToken());
-            // 종점
             int N = Integer.parseInt(st.nextToken());
-            // 충전기 수
             int M = Integer.parseInt(st.nextToken());
 
             int[] charge = new int[M];
@@ -28,25 +25,21 @@ public class Test {
                 charge[i] = Integer.parseInt(st.nextToken());
             }
 
-            // 충전 횟수
-            int cnt = 0;
-            // 현재 위치를 나타내는 값
             int current = 0;
-            // 충전기가 있는 정류장 idx
+            int cnt = 0;
             int idx = 0;
 
-            // 반복은 current + K 가 종점보다 크거나 같을 때 까지
-            // -> current + K 가 N 보다 작다면 반복
+            // 현재 위치에서 버스가 이동 했을 때의 위치가 N 보다 작은 경우 반복
+            // -> 현재 위치에서 버스는 종점까지 갈 수 없다
             while(current + K < N) {
-                // 이동 할 때 위치값 저장을 위한 next 변수
+                // next 는 버스가 현재의 충전량으로 가능한 거리를 하나 씩 비교한다.
                 int next = current;
 
-                // idx 를 +1 하여, 현재 값 + 이동 가능한 거리 보다 작거나 같은지 check
+                // 현재 모든 정류소를 탐색하지 않았고, 현재 가리키는 충전기가 있는 정류장이 버스가 이동 가능한 정류장보다 뒤에 있거나 같은 경우
                 while(idx < M && charge[idx] <= current + K) {
-                    // 현재 가리키는 정류소가 버스가 이동할 수 있는 정류소보다 작거나 같다면 해당 정류소로 우선적이도 이동 시킴
+                    // 현재 충전량으로 가능한 다음 정류소 위치
                     next = charge[idx];
-                    // 다음 정류장 이동을 위한 ++
-                    idx++;
+                    idx ++;
                 }
 
                 // 반복문이 끝났을 때, next 와 current 의 차이가 없다면 둘 중 하나이다.
@@ -62,10 +55,8 @@ public class Test {
             }
 
             sb.append("#").append(testCase).append(" ").append(cnt).append("\n");
-
         }
 
         System.out.print(sb);
     }
-
 }
