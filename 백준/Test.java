@@ -3,43 +3,41 @@ import java.io.*;
 import java.util.*;
 
 public class Test {
-    static int N, res;
-    static int[] T, P;
+    static int N, K, size, Max;
+    static int[] arr;
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st;
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-        N = Integer.parseInt(br.readLine());
+        N = Integer.parseInt(st.nextToken());
+        K = Integer.parseInt(st.nextToken());
 
-        T = new int[N + 1];
-        P = new int[N + 1];
+        size = String.valueOf(N).length();
 
-        for(int i = 1; i <= N; i++) {
-            st = new StringTokenizer(br.readLine());
+        arr = new int[K];
 
-            T[i] = Integer.parseInt(st.nextToken());
-            P[i] = Integer.parseInt(st.nextToken());
+        st = new StringTokenizer(br.readLine());
+        for(int i = 0; i < K; i++) {
+            arr[i] = Integer.parseInt(st.nextToken());
         }
 
-        res = 0;
+        Max = 0;
 
-        dfs(1, 0);
+        dfs(0, 0);
 
-        System.out.print(res);
+        System.out.print(Max);
     }
 
-    static void dfs(int day, int price) {
-        if(day >= N + 1) {
-            res = Math.max(res, price);
-            return;
-        }
+    static void dfs(int depth, int current) {
+        if(current > N) return;
 
-        int endTime = day + T[day];
-        if(endTime <= N + 1) {
-            dfs(endTime, price + P[day]);
-        }
+        Max = Math.max(Max, current);
 
-        dfs(day + 1, price);
+        if(depth == size) return;
+
+        for(int i = 0; i < K; i++) {
+            dfs(depth + 1, current * 10 + arr[i]);
+        }
     }
 }
