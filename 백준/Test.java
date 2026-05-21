@@ -3,41 +3,43 @@ import java.io.*;
 import java.util.*;
 
 public class Test {
+    static int N, res;
+    static int[] T, P;
+
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
 
-        int N = Integer.parseInt(br.readLine());
+        N = Integer.parseInt(br.readLine());
 
-        if(N < 3) {
-            System.out.print(N);
+        T = new int[N + 1];
+        P = new int[N + 1];
+
+        for(int i = 1; i <= N; i++) {
+            st = new StringTokenizer(br.readLine());
+
+            T[i] = Integer.parseInt(st.nextToken());
+            P[i] = Integer.parseInt(st.nextToken());
+        }
+
+        res = 0;
+
+        dfs(1, 0);
+
+        System.out.print(res);
+    }
+
+    static void dfs(int day, int price) {
+        if(day >= N + 1) {
+            res = Math.max(res, price);
             return;
         }
 
-        int[] A = new int[N];
-
-        st = new StringTokenizer(br.readLine());
-        for(int i = 0; i < N; i++) {
-            A[i] = Integer.parseInt(st.nextToken());
+        int endTime = day + T[day];
+        if(endTime <= N + 1) {
+            dfs(endTime, price + P[day]);
         }
 
-        Arrays.sort(A);
-
-        int res = 2;
-
-        // i 는 가장 작은 두 수 a 와 b
-        // j 는 가장 큰 수 c 를 나타낸다.
-
-        for(int i = 0; i < N - 1; i++) {
-            for(int j = N - 1; j > i + 2; j--) {
-                if(A[i] + A[i + 1] > A[j]) {
-                    res = Math.max(res, j - i + 1);
-                    break;
-                }
-            }
-        }
-
-        System.out.print(res);
-
+        dfs(day + 1, price);
     }
 }

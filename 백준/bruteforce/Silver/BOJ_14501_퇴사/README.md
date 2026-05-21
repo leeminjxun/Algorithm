@@ -1,4 +1,4 @@
-# ❌ BOJ: 14501 퇴사 (완전탐색 / dfs, Silver3)
+# 🔁 BOJ: 14501 퇴사 (완전탐색 / dfs, Silver3)
 
 https://www.acmicpc.net/problem/14501
 
@@ -19,3 +19,7 @@ static void dfs() {
     if(day + T[day] <= N + 1)   dfs(상담 받기);
     dfs(상담 안받기)
 }
+
+3. if(day == N + 1) 
+N + 1 이 되기 전에 최댓값을 가지는 경우가 나올 수 있다. 하지만 day >= N + 1 라 조건문을 사용한다면,
+모든 경우에서 종료되기 때문에, 아무것도 선택하지 않는 경우가 지속되어 day 가 N + 1 이 될 때까지 기다린다.

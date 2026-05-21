@@ -33,14 +33,12 @@ public class 퇴사 {
     }
 
     static void dfs(int day, int price) {
-
-        if(day >= N + 1) {
+        if(day == N + 1) {
             maxPrice = Math.max(maxPrice, price);
             return;
         }
 
         int endTime = day + T[day];
-
         if(endTime <= N + 1) {
             dfs(endTime, price + P[day]);
         }
