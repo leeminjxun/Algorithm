@@ -3,41 +3,30 @@ import java.io.*;
 import java.util.*;
 
 public class Test {
-    static int N, K, size, Max;
-    static int[] arr;
-
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
+        StringTokenizer st;
 
-        N = Integer.parseInt(st.nextToken());
-        K = Integer.parseInt(st.nextToken());
+        String S = br.readLine();
+        String P = br.readLine();
 
-        size = String.valueOf(N).length();
+        int idx = 0;
+        String target = "";
 
-        arr = new int[K];
+        int cnt = 0;
 
-        st = new StringTokenizer(br.readLine());
-        for(int i = 0; i < K; i++) {
-            arr[i] = Integer.parseInt(st.nextToken());
+        while(idx < P.length()) {
+            target += String.valueOf(P.charAt(idx));
+
+            if(!S.contains(target)) {
+                target = "";
+                cnt++;
+            } else {
+                idx++;
+            }
         }
 
-        Max = 0;
+        System.out.println(cnt + 1);
 
-        dfs(0, 0);
-
-        System.out.print(Max);
-    }
-
-    static void dfs(int depth, int current) {
-        if(current > N) return;
-
-        Max = Math.max(Max, current);
-
-        if(depth == size) return;
-
-        for(int i = 0; i < K; i++) {
-            dfs(depth + 1, current * 10 + arr[i]);
-        }
     }
 }

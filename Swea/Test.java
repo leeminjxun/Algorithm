@@ -12,60 +12,9 @@ public class Test {
 
         StringBuilder sb = new StringBuilder();
         for(int testCase = 1; testCase <= T; testCase++) {
-            st = new StringTokenizer(br.readLine());
-
-            // 충전된 버스가 이동 가능한 정류장 수
-            int K = Integer.parseInt(st.nextToken());
-            // 종점
-            int N = Integer.parseInt(st.nextToken());
-            // 충전기 수
-            int M = Integer.parseInt(st.nextToken());
-
-            int[] charge = new int[M];
-
-            st = new StringTokenizer(br.readLine());
-            for(int i = 0; i < M; i++) {
-                charge[i] = Integer.parseInt(st.nextToken());
-            }
-
-            // 충전 횟수
-            int cnt = 0;
-            // 현재 위치를 나타내는 값
-            int current = 0;
-            // 충전기가 있는 정류장 idx
-            int idx = 0;
-
-            // 반복은 current + K 가 종점보다 크거나 같을 때 까지
-            // -> current + K 가 N 보다 작다면 반복
-            while(current + K < N) {
-                // 이동 할 때 위치값 저장을 위한 next 변수
-                int next = current;
-
-                // idx 를 +1 하여, 현재 값 + 이동 가능한 거리 보다 작거나 같은지 check
-                while(idx < M && charge[idx] <= current + K) {
-                    // 현재 가리키는 정류소가 버스가 이동할 수 있는 정류소보다 작거나 같다면 해당 정류소로 우선적이도 이동 시킴
-                    next = charge[idx];
-                    // 다음 정류장 이동을 위한 ++
-                    idx++;
-                }
-
-                // 반복문이 끝났을 때, next 와 current 의 차이가 없다면 둘 중 하나이다.
-                // 1. 정류소 내의 충전기 간격을 잘못 설치해, 버스가 다음 위치까지 가지 못한 경우
-                // 2. 충전량이 매우 커 한번의 충전으로 종점까지 간 경우
-                if(next == current) {
-                    cnt = 0;
-                    break;
-                }
-
-                current = next;
-                cnt++;
-            }
-
-            sb.append("#").append(testCase).append(" ").append(cnt).append("\n");
 
         }
 
         System.out.print(sb);
     }
-
 }
