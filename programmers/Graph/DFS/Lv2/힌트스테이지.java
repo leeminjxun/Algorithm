@@ -1,4 +1,4 @@
-package programmers.DFS.Lv2;
+package programmers.Graph.DFS.Lv2;
 
 class 힌트스테이지 {
     static int minCost, hintLength, costLength;
